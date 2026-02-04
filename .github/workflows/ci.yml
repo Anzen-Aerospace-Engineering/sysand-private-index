@@ -51,7 +51,7 @@ jobs:
           path: index
 
       - name: Reset to base commit
-        run: git reset --hard 6d8a6103e918d78c0841e47413174b676e457560
+        run: git reset --hard f35de60d91a54766f5a1bf3aafba57c8899f6eec
 
       - name: Extract index to root
         run: |
