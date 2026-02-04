@@ -1,13 +1,24 @@
-# Internal Sysand Package Index -- GitHub edition
+# Internal Sysand Project Index Example -- GitHub edition
 
-Project to host internal SysML v2 packages through private GitHub repos.
+An example GitHub repository and GitHub workflow that could be used to self-host
+an internal (private) SysML v2 Project Index for use with
+[Sysand](https://github.com/sensmetry/sysand).
+
+This example is not intended to be the one and only approach for self-hosting a
+project index, but rather a way to quickly spin up an initial index. The
+included GitHub workflow is also very minimal and the end-users should customise
+it for their needs (e.g. adding quality gates).
 
 > [!NOTE]
 > Since GitHub Pages do not allow authorization using Personal Access
-> Tokens, this example is a rather dirty workaround that uses
+> Tokens, this example is a workaround that uses
 > `raw.githubusercontent.com` to expose the files to Sysand CLI.
+> Sensmetry cannot guarantee that accessing files through
+> `raw.githubusercontent.com` will not be rate-limited by GitHub, thus if you
+> expect a large volume of requests going to this index, this solution might
+> not be ideal.
 
-The URL of the index:
+The URL of the index will look something like this:
 `https://raw.githubusercontent.com/OWNER/REPO/refs/heads/index/`
 
 ![Operating Principle](operating_principle.png)
@@ -63,11 +74,16 @@ to it.
       `refs/heads/index/**` part is important!)
     - `SYSAND_CRED_<X>_BEARER_TOKEN` with the value set to the Personal Access
       Token generated in step 1.
+    - For more information about how Sysand deals with Authentication, refer to
+      [Sysand documentation](https://docs.sysand.org/authentication.html).
     - An example `.env.example` file is provided in this repo.
 3. Use the `--index` Sysand CLI argument with the value of
    `https://raw.githubusercontent.com/OWNER/REPO/refs/heads/index/` when
    installing the packages from this index OR use `sysand.toml` config file with
    the index set there.
+    - For more information about how to set up Sysand to use custom indices,
+      refer to [Sysand
+      documentation](https://docs.sysand.org/config/indexes.html).
     - An example `sysand.toml` config file is provided in this repo.
 
 ## First time setup
@@ -82,8 +98,8 @@ You need to set up a GitHub repo as follows:
 - Note down the SHA of the deletion commit.
 - Push the `index` branch to GitHub.
 - Check out `main` branch again.
-- Enter that SHA into the `.github/workflows/ci.yml` file, line 54 (the one with
-  `git reset --hard`).
+- Enter that SHA into the [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+  file, line 54 (the one with `git reset --hard`).
 - Commit and push the SHA change.
 - You should be good to go! Whenever you add a `.kpar` file to the `packages`
   folder, the CI should trigger and the package should become available through
