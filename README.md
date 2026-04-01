@@ -1,8 +1,54 @@
 # Internal Sysand Project Index Example -- GitHub edition
 
-An example GitHub repository and GitHub workflow that could be used to self-host
-an internal (private) SysML v2 Project Index for use with
+An example GitHub repository and GitHub workflow to self-host an
+internal (private) SysML v2 Project Index for use with
 [Sysand](https://github.com/sensmetry/sysand).
+
+## Quick how-tos
+
+### To import packages into a new local project
+
+Note that there is no need to clone this repository to execute this
+task successfully.
+
+1. Install Sysand following [this
+guide](https://docs.sysand.org/getting_started/installation.html#download-latest-release),
+but make sure to use
+[v0.0.10](https://github.com/sensmetry/sysand/releases/v0.0.10/)
+instead of the latest one to avoid incompatibilities.
+2. Create a new folder to host your SysML v2 project.
+3. Inside the project folder, execute `sysand init`.
+4. Add a copy of `.env.example` to the project folder, rename it to
+   `.env`, and replace the GitHub bearer token placeholder with the
+   actual token (see below on how to create it or ask Fernando for the
+   existing one). Load the variables into your environment (e.g. with
+   `source .env` in bash).
+5. Put a copy of `sysand.toml` inside the project folder.
+6. Run `sysand add urn:kpar:<package-name>`. You can check the
+   existing packages with `curl
+   https://raw.githubusercontent.com/Anzen-Aerospace-Engineering/sysand-private-index/refs/heads/index/entries.txt`. For
+   example, add the empty test package with `sysand add
+   urn:kpar:sysmlv2-test`.
+
+### To export packages into the index
+
+1. Check [the
+   docs](https://docs.sysand.org/getting_started/tutorial.html) to
+   learn how to work with Sysand. Once you have a new version of your
+   project ready to be published in the index, run `sysand build` to
+   obtain the `<package-name>-<version>.kpar` file.
+2. Clone this repo. Make sure that you are working in the `main`
+   branch and **never** work with the `index` branch.
+3. Copy the `.kpar` file into `packages/<package-name>`. If it is the
+   first version added to the repo, you will need to create the second
+   folder manually.
+4. Commit and push normally. You can check whether the GitHub CI
+   action executed properly and the changes to the `index` branch from
+   the repository page on GitHub.
+5. Check that your package is now in the index (not sure what is the
+   cleanest, easiest way to do this at the moment).
+
+## Preliminaries
 
 This example is not intended to be the one and only approach for self-hosting a
 project index, but rather a way to quickly spin up an initial index. The
