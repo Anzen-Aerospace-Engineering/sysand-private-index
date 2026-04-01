@@ -14,7 +14,7 @@ jobs:
 
       - name: Set up Index
         run: |
-          wget -O sysand https://github.com/sensmetry/sysand/releases/latest/download/sysand-linux-x86_64
+          wget -O sysand https://github.com/sensmetry/sysand/releases/download/v0.0.10/sysand-linux-x86_64
           chmod +x sysand
           ./sysand env
           for i in $(find packages -name "*.kpar"); do

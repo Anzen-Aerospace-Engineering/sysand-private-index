@@ -18,8 +18,8 @@ it for their needs (e.g. adding quality gates).
 > expect a large volume of requests going to this index, this solution might
 > not be ideal.
 
-The URL of the index will look something like this:
-`https://raw.githubusercontent.com/OWNER/REPO/refs/heads/index/`
+The URL of the index is:
+`https://raw.githubusercontent.com/Anzen-Aerospace-Engineering/sysand-private-index/refs/heads/index/`
 
 ![Operating Principle](operating_principle.png)
 
@@ -70,7 +70,7 @@ to it.
 2. Create a `.env` file or use other means to set the following environment
    variables. For `<X>` you can use whatever you want.
     - `SYSAND_CRED_<X>` with the value
-      `https://raw.githubusercontent.com/OWNER/REPO/refs/heads/index/**` (the
+      `https://raw.githubusercontent.com/Anzen-Aerospace-Engineering/sysand-private-index/refs/heads/index/**` (the
       `refs/heads/index/**` part is important!)
     - `SYSAND_CRED_<X>_BEARER_TOKEN` with the value set to the Personal Access
       Token generated in step 1.
@@ -78,7 +78,7 @@ to it.
       [Sysand documentation](https://docs.sysand.org/authentication.html).
     - An example `.env.example` file is provided in this repo.
 3. Use the `--index` Sysand CLI argument with the value of
-   `https://raw.githubusercontent.com/OWNER/REPO/refs/heads/index/` when
+   `https://raw.githubusercontent.com/Anzen-Aerospace-Engineering/sysand-private-index/refs/heads/index/` when
    installing the packages from this index OR use `sysand.toml` config file with
    the index set there.
     - For more information about how to set up Sysand to use custom indices,
@@ -104,8 +104,3 @@ You need to set up a GitHub repo as follows:
 - You should be good to go! Whenever you add a `.kpar` file to the `packages`
   folder, the CI should trigger and the package should become available through
   [`sysand add`](https://docs.sysand.org/commands/add.html) or `sysand clone`.
-
-Don't forget to update the `OWNER/REPO` parts of the `raw.githubusercontent.com`
-URLs in this `README.md`, [`.env.example`](.env.example), and
-[`sysand.toml`](sysand.toml) files, to make it easier for your colleagues to
-access the index URL.
