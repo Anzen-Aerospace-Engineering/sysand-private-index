@@ -1,0 +1,12 @@
+{
+  "index": {
+    "SysMLv2Test": "SysMLv2Test.sysml"
+  },
+  "created": "2026-04-01T10:13:55.674344071Z",
+  "checksum": {
+    "SysMLv2Test.sysml": {
+      "value": "3a1dc1f1cc458c5bd15016083010a2217762f6c5dd0c768c39331fc7b442435b",
+      "algorithm": "SHA256"
+    }
+  }
+}
