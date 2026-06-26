@@ -1,0 +1,28 @@
+{
+  "index": {
+    "SystemAnalysis": "SystemAnalysis/SystemFunctions.sysml",
+    "SystemStates": "SystemAnalysis/SystemStates.sysml",
+    "SystemParts": "SystemAnalysis/SystemParts.sysml",
+    "SystemRequirements": "SystemAnalysis/SystemRequirements.sysml",
+    "SystemFunctions": "SystemAnalysis/SystemFunctions.sysml"
+  },
+  "created": "2026-04-06T10:37:49.892064405Z",
+  "checksum": {
+    "SystemAnalysis/SystemFunctions.sysml": {
+      "value": "6292d20ac2bc23ab2ca481d1746e217971d3d6507f35277106fe7d17a07bcf7a",
+      "algorithm": "SHA256"
+    },
+    "SystemAnalysis/SystemStates.sysml": {
+      "value": "81bc73e71967cdf19920860dbc9c47d2f90970fea9425c097674d83c04057179",
+      "algorithm": "SHA256"
+    },
+    "SystemAnalysis/SystemParts.sysml": {
+      "value": "ba53cd0d3a72152988ae245d43ac8b12ac3cfe203f2e857e64838267fa284fe3",
+      "algorithm": "SHA256"
+    },
+    "SystemAnalysis/SystemRequirements.sysml": {
+      "value": "0a4fc63c2ebee9a22110eef44433b7773c6a5916284bda7397e78da60631b55d",
+      "algorithm": "SHA256"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "index": {
+    "SystemAnalysis": "SystemAnalysis/SystemFunctions.sysml",
+    "SystemStates": "SystemAnalysis/SystemStates.sysml"
+  },
+  "created": "2026-04-06T10:37:49.892064405Z",
+  "checksum": {
+    "SystemAnalysis/SystemFunctions.sysml": {
+      "value": "421ce72803474b5a227040671177b3a6eb86c4b205a1a45cff1b687e5e8db9c8",
+      "algorithm": "SHA256"
+    },
+    "SystemAnalysis/SystemStates.sysml": {
+      "value": "81bc73e71967cdf19920860dbc9c47d2f90970fea9425c097674d83c04057179",
+      "algorithm": "SHA256"
+    }
+  }
+}
